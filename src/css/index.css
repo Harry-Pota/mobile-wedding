@@ -16,6 +16,8 @@ footer {
   padding: 30px 0;
 }
 
+img {-webkit-touch-callout:none;}
+
 .main-name {
   margin: 0 auto;
   letter-spacing: 10px;
