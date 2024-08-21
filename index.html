@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- css -->
+    <link rel="stylesheet" href="./src/css/index.css" />
+    <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+
+    <!-- tab favicon & title -->
+    <link rel="icon" type="image/x-icon" href="./public/assets/free-icon-hearts-2589108.png" />
+    <!-- <a href="https://www.flaticon.com/kr/free-icons/" title="하트 아이콘">하트 아이콘 제작자: Vlad Szirka - Flaticon</a> -->
+    <title>은호❤️해니 결혼식에 초대합니다.</title>
+  </head>
+
+  <body>
+    <div id="root">
+      <!-- Top start-->
+      <div>
+        <img id="main-img" src="./public/assets/main-division-poto.jpeg" alt="mainImage" height="auto" />
+      </div>
+      <div style="margin: 60px auto">
+        <div class="main-name">
+          <span class="main-name left"></span>
+          <span>|</span>
+          <span class="main-name right"></span>
+        </div>
+        <div class="main-wedding-date"></div>
+        <div class="main-wedding-venu"></div>
+      </div>
+      <!-- Top end-->
+
+      <!-- 인사말 start -->
+      <div class="middle-title">인사말</div>
+      <div style="margin: 50px auto">
+        <div style="height: auto; line-height: 2rem; font-weight: 500">
+          서로가 마주보며 다져온 사랑을<br />
+          이제 함께 한 곳을 바라보며<br />
+          걸어갈 수 있는 큰 사랑으로 키우고자 합니다.<br />
+          저희 두 사람이 사랑의 이름으로<br />
+          지켜나갈 수 있게 앞날을<br />
+          축복해 주시면 감사하겠습니다.
+        </div>
+        <div style=" margin: 40px auto; height: auto; line-height: 2rem; font-weight: 500;">
+          귀한걸음으로 축복해주시면<br />
+          더 없는 기쁨으로 간직하겠습니다.<br />
+        </div>
+      </div>
+      <div style="line-height: 2rem; margin: 10px auto">
+        <span style="letter-spacing: 2px">최명규</span> |
+        <span style="letter-spacing: 2px">이연순</span>
+        <span style="font-size: 0.8rem">장남</span> 은호<br />
+        <span style="letter-spacing: 2px">김진광</span> |
+        <span style="letter-spacing: 2px">김영미</span>
+        <span style="font-size: 0.8rem">장녀</span> 해니
+      </div>
+      <!-- 인사말 end -->
+      <!-- 예식일시 start -->
+      <div class="middle-title">예식일시</div>
+      <div style="margin: 10px auto;height: auto;line-height: 2rem;font-weight: 500;">
+        2025.03.22 SAT PM 12:00
+      </div>
+      <!-- 예식일시 end -->
+      <!-- 카카오맵  start -->
+      <div class="middle-title">오시는길</div>
+      <!-- <div id="staticMap"></div> -->
+      <div
+        id="daumRoughmapContainer1724175434169"
+        class="root_daum_roughmap root_daum_roughmap_landing"
+      ></div>
+      <!-- 카카오맵 end -->
+      <!-- 주차안내  start -->
+      <!-- <div class="middle-title">주차 안내</div> -->
+      <div class="location-inner">
+        <div>
+          <div class="location-title">> 지하철</div>
+          <div class="location-description"> 수인분당선 수원시청역 10번출구 (도보 1분거리)</div>
+        </div>
+        <div style="margin : 30px 0">
+          <div class="location-title">> 버스</div>
+          <div class="location-description"> 
+            역전정류장 : 13-1, 92-1<br>
+            -> 수원시청역 9번 출구, 국민연금공단 하차<br>
+            매산시장앞 : 51<br>
+            -> 수원시청역 1번 출구, 국민연금공단, 경인일보 하차<br>
+            아주대,법원사거리 : 81<br>
+            -> 수원시청역 10번 출구, 국민연금공단, 경인일보 하차
+          </div>
+        </div>
+        <div>
+          <div class="location-title">> 주차안내</div>
+          <div class="location-description"> 웨딩홀 입구에서 주차요원 안내를 받으시길 바랍니다.<br>(경인일보, 대원콤비프라자,경기아트센터)</div>
+        </div>
+      </div>
+      <!-- 주차안내 end -->
+      <footer>&copy; 2024. Harry Choi All Rights Reserved.</footer>
+    </div>
+
+    <script src="./src/js/common.js"></script>
+    <script charset="UTF-8">
+      new daum.roughmap.Lander({
+        timestamp: "1724175434169",
+        key: "2keda",
+        mapWidth:
+        mobileOs.myMobileOs === "etc" ? bodyWidth : `${bodyWidth - 60}`,
+        mapHeight: "360",
+      }).render();
+    </script>
+  </body>
+</html>
