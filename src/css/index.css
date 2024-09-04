@@ -8,7 +8,7 @@
   /* position: fixed; */
   text-align: center;
   /* overflow: scroll; */
-  background-color: #FFEEEE;
+  background-color: seashell;
 }
 
 footer {
@@ -63,4 +63,14 @@ img {-webkit-touch-callout:none;}
   .location-description{
     padding-left: 10px;
   }
+}
+
+.location-info {
+  margin-bottom: 5px;
+  font-size: 1.1rem;
+}
+.location-info-address {
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+  color: #5a5f66;
 }

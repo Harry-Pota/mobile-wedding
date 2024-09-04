@@ -11,6 +11,7 @@ const weddingInfo = {
   },
   date: "2025.03.22 SAT PM 12:00",
   venu: "파티움하우스 3F 파티움홀",
+  address: "( 수원시 팔달구 효원로 289 )",
 };
 
 const userAgent = navigator.userAgent.toLowerCase(); //userAgent 값 얻기
@@ -44,3 +45,6 @@ document.querySelector(".main-name.left").innerText = weddingInfo.bride.name;
 document.querySelector(".main-name.right").innerText = weddingInfo.groom.name;
 document.querySelector(".main-wedding-date").innerText = weddingInfo.date;
 document.querySelector(".main-wedding-venu").innerText = weddingInfo.venu;
+document.querySelector(".location-info").innerText = weddingInfo.venu;
+document.querySelector(".location-info-address").innerText =
+  weddingInfo.address;
