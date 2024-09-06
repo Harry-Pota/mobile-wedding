@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- cdn -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
     <!-- css -->
     <link rel="stylesheet" href="./src/css/index.css" />
     <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
@@ -62,6 +67,15 @@
         2025.03.22 SAT PM 12:00
       </div>
       <!-- 예식일시 end -->
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <!-- <div class="swiper-slide">Slide 1</div>
+          <div class="swiper-slide">Slide 2</div>
+          <div class="swiper-slide">Slide 3</div> -->
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
       <!-- 카카오맵  start -->
       <div class="middle-title">오시는길</div>
       <div class="location-info"></div>
@@ -107,6 +121,17 @@
         mobileOs.myMobileOs === "etc" ? bodyWidth : `${bodyWidth - 60}`,
         mapHeight: "360",
       }).render();
+    </script>
+
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
     </script>
   </body>
 </html>

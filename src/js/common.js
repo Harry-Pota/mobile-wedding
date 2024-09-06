@@ -36,15 +36,28 @@ if (userAgent.match("android") != null) {
 const bodyWidth = window.document.body.clientWidth;
 
 if (mobileOs.myMobileOs === "etc") {
-  document.querySelector("#main-img").style.width = bodyWidth / 3.5 + "px";
+  $("#main-img").css("width", `${bodyWidth / 3.5}px`);
+  $("swiper").css("width", `${bodyWidth / 3.5}px`);
 } else {
-  document.querySelector("#main-img").style.width = bodyWidth + "px";
+  $("#main-img").css("width", `${bodyWidth}px`);
+  $("swiper").css("width", `${bodyWidth}px`);
 }
 
-document.querySelector(".main-name.left").innerText = weddingInfo.bride.name;
-document.querySelector(".main-name.right").innerText = weddingInfo.groom.name;
-document.querySelector(".main-wedding-date").innerText = weddingInfo.date;
-document.querySelector(".main-wedding-venu").innerText = weddingInfo.venu;
-document.querySelector(".location-info").innerText = weddingInfo.venu;
-document.querySelector(".location-info-address").innerText =
-  weddingInfo.address;
+let swiperDivsion = "";
+
+for (let i = 0; i <= 2; i++) {
+  swiperDivsion += `<div class="swiper-slide"><img id="swiper-image${
+    i + 1
+  }" src="./public/assets/swiper_image${i + 1}.jpeg" alt="swiper_image${
+    i + 1
+  }" height="auto"/></div>`;
+}
+
+$(".swiper-wrapper").append(swiperDivsion);
+
+$(".main-name.left").text(weddingInfo.bride.name);
+$(".main-name.right").text(weddingInfo.groom.name);
+$(".main-wedding-date").text(weddingInfo.date);
+$(".main-wedding-venu").text(weddingInfo.venu);
+$(".location-info").text(weddingInfo.venu);
+$(".location-info-address").text(weddingInfo.address);
