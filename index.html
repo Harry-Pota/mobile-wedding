@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1.0, user-scalable=no">
 
     <!-- cdn -->
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
@@ -130,6 +130,14 @@
           prevEl: ".swiper-button-prev",
         },
       });
+
+      document.body.addEventListener('touchstart', function(e) {
+        if ( (e.touches.length > 1) || e.targetTouches.length > 1) {
+          e.preventDefault();
+          e.stopPropagation();
+          e.stopImmediatePropagation();
+        }
+      }, {passive: false});
     </script>
   </body>
 </html>
