@@ -6,8 +6,12 @@
 
     <!-- cdn -->
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/font-awesome.min.css">
+
 
     <!-- css -->
     <link rel="stylesheet" href="./src/css/index.css" />
@@ -63,16 +67,31 @@
       <!-- 인사말 end -->
       <!-- 예식일시 start -->
       <div class="middle-title">예식일시</div>
-      <div style="margin: 10px auto;height: auto;line-height: 2rem;font-weight: 500;">
-        2025.03.22 SAT PM 12:00
+      <div id="calendar">
+        <div class="header">
+          <span id="currentMonth"></span>
+        </div>
+        <div class="days">
+          <div class="day" style="color: red">일</div>
+          <div class="day">월</div>
+          <div class="day">화</div>
+          <div class="day">수</div>
+          <div class="day">목</div>
+          <div class="day">금</div>
+          <div class="day">토</div>
+        </div>
+        <div id="dates"></div>
       </div>
       <!-- 예식일시 end -->
       
       <div class="middle-title">사진첩</div>
-      <div class="swiper mySwiper">
+      <div class="swiper mySwiper2">
         <div class="swiper-wrapper"></div>
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
+      </div>
+      <div thumbsSlider="" class="swiper mySwiper">
+        <div class="swiper-wrapper"></div>
       </div>
       <!-- 카카오맵  start -->
       <div class="middle-title">오시는길</div>
@@ -103,14 +122,26 @@
         </div>
         <div>
           <div class="location-title">> 주차안내</div>
-          <div class="location-description"> 웨딩홀 입구에서 주차요원 안내를 받으시길 바랍니다.<br>(경인일보, 대원콤비프라자,경기아트센터)</div>
+          <div class="location-description"> 웨딩홀 입구에서 주차요원 안내를 받으시길 바랍니다.<br>(경인일보, 대원콤비프라자, 경기아트센터)</div>
         </div>
       </div>
       <!-- 주차안내 end -->
+
+      <!-- 마음전할 곳 start  -->
+      <div class="middle-title">축하의 마음 전하기</div>
+      <div style="font-size: 0.7rem; text-align: left; padding-left: 8%">계좌번호 클릭 시 복사, 전화번호 클릭 시 전화로 연결됩니다.</div>
+      <div class="account" style="margin: 10px auto; border:1px solid black; border-radius: 10px; width: 85%">
+        <div class="grooms" style="text-align: left; display: flex; flex-direction: column"></div>
+        <div class="brides" style="text-align: left;"></div>
+      </div>
+      <div></div>
+      <!-- 마음전할 곳 end -->
+
       <footer>&copy; 2024. Harry Choi All Rights Reserved.</footer>
     </div>
 
     <script src="./src/js/common.js"></script>
+    <script src="./src/js/calendar.js"></script>
     <script charset="UTF-8">
       new daum.roughmap.Lander({
         timestamp: "1724175434169",
@@ -124,13 +155,31 @@
 
     <!-- Initialize Swiper -->
     <script>
+      // var swiper = new Swiper(".mySwiper", {
+      //   navigation: {
+      //     nextEl: ".swiper-button-next",
+      //     prevEl: ".swiper-button-prev",
+      //   },
+      // });
       var swiper = new Swiper(".mySwiper", {
+        loop: true,
+        spaceBetween: 10,
+        slidesPerView: 4,
+        freeMode: true,
+        watchSlidesProgress: true,
+      });
+      var swiper2 = new Swiper(".mySwiper2", {
+        loop: true,
+        spaceBetween: 10,
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
         },
+        thumbs: {
+          swiper: swiper,
+        },
       });
-
+      // 확대 방어 코드
       document.body.addEventListener('touchstart', function(e) {
         if ( (e.touches.length > 1) || e.targetTouches.length > 1) {
           e.preventDefault();

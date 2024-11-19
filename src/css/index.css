@@ -88,6 +88,7 @@ img {-webkit-touch-callout:none;}
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: auto 0;
 }
 
 .swiper-slide img {
@@ -95,4 +96,76 @@ img {-webkit-touch-callout:none;}
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.swiper-button-next,
+.swiper-button-prev
+{
+  color: #999999;
+}
+
+.account-name {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  height: 30px;
+  padding-left: 1rem;
+}
+
+#calendar {
+  width: 350px;
+  margin: 40px auto;
+  font-family: 'Arial', sans-serif;
+  border: 0;
+  overflow: hidden;
+}
+
+/* 헤더 스타일 */
+.header {
+  padding-bottom: 20px;
+  background: transparent;
+  color: #000000;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* 요일 스타일 */
+.days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  background: transparent;
+  font-weight: bold;
+  padding: 10px 0;
+}
+
+/* 날짜 스타일 */
+#dates {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  padding: 10px 0;
+}
+
+/* 날짜 개별 스타일 */
+.date {
+  padding: 15px 0;
+  cursor: pointer;
+  border-radius: 50%;
+  margin: 5px auto;
+  width: 40px;
+  height: 10px;
+  line-height: 10px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* 선택된 날짜 스타일 */
+.date.selected {
+  position: relative;
+  width: 40px;
+  height: 10px;
+  background-color: #FF5733;
+  color: white;
+  margin: 5px auto;
 }
