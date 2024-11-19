@@ -1,8 +1,12 @@
 @import url("./reset.css");
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Noto+Sans+KR:wght@100..900&family=Noto+Serif+KR:wght@200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Nanum+Gothic&family=Noto+Sans+KR:wght@100..900&family=Noto+Serif+KR:wght@200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Nanum+Gothic&family=Noto+Sans+KR:wght@100..900&family=Noto+Serif+KR:wght@200..900&display=swap');
 
 #root {
-  font-family: "Noto Serif KR";
+  font-family: "Noto Sans KR", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
   width: 100%;
   margin: 0 auto;
   /* position: fixed; */
@@ -106,16 +110,19 @@ img {-webkit-touch-callout:none;}
 
 .account-name {
   display: flex;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
-  height: 30px;
+  height: 2.2rem;
   padding-left: 1rem;
+  background-color: #ffe4b2;
 }
 
 #calendar {
-  width: 350px;
+  width: 300px;
   margin: 40px auto;
-  font-family: 'Arial', sans-serif;
+  font-family: "Gowun Dodum", sans-serif;
+  font-weight: 400;
+  font-style: normal;
   border: 0;
   overflow: hidden;
 }

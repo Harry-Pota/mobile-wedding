@@ -22,39 +22,33 @@ document.addEventListener("DOMContentLoaded", () => {
         let datesHtml = "";
         let current = startDate;
 
+        const sunday = [2, 9 ,16, 23, 30]
+
         while (current.isBefore(endDate, "day")) {
             const isCurrentMonth = current.isSame(targetMonth, "month");
             const isSelected = current.isSame(selectedDate, "day");
 
-            // console.log(current.date())
-            // console.log(current.date() >1)
-            // if(current.date() > 1) {
-            //     datesHtml += `
-            //         <div
-            //           class="date ${isCurrentMonth ? "" : "other-month"} ${isSelected ? "selected" : ""}"
-            //           data-date="${current.format("YYYY-MM-DD")}"
-            //         >
-            //         </div>
-            //       `;
-            // } else {
-            //     datesHtml += `
-            //         <div
-            //           class="date ${isCurrentMonth ? "" : "other-month"} ${isSelected ? "selected" : ""}"
-            //           data-date="${current.format("YYYY-MM-DD")}"
-            //         >
-            //           ${current.date()}
-            //         </div>
-            //       `;
-            // }
 
-            datesHtml += `
+            console.log(current.month())
+            if(current.month() === 1 || current.month() === 3) {
+                datesHtml += `
+                    <div
+                      class="date ${isCurrentMonth ? "" : "other-month"} ${isSelected ? "selected" : ""}"
+                      data-date="${current.format("YYYY-MM-DD")}"
+                    >
+                    </div>
+                  `;
+            } else {
+                datesHtml += `
                     <div 
                       class="date ${isCurrentMonth ? "" : "other-month"} ${isSelected ? "selected" : ""}" 
+                      style="${current.day() === 0 && "color: red"}"
                       data-date="${current.format("YYYY-MM-DD")}"
                     >
                       ${current.date()}
                     </div>
                   `;
+            }
 
             current = current.add(1, "day");
         }
