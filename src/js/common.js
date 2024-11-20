@@ -92,7 +92,7 @@ groomsAccountInfos.forEach((rendor,i) => {
     <div style="display: flex; justify-content: start; align-items: center; padding: 0.5rem 0.5rem 0.5rem 1rem" >
     <span>${rendor.account}</span>
     <span style="margin-left: auto;" >
-      <button style="border: 0; border-radius: 10px; background: #eeeeee; padding: 0.4rem 0.8rem" onclick="copyAccount(this)">복사</button>
+      <button style="border: 0; border-radius: 10px; color: black; background: #eeeeee; padding: 0.4rem 0.8rem" onclick="copyAccount(this)">복사</button>
     </span>
     </div>
      <!-- 이름 -->
@@ -109,7 +109,7 @@ brideAccountInfos.forEach((rendor,i) => (
     <div style="display: flex; justify-content: start; align-items: center; padding: 0.5rem 0.5rem 0.5rem 1rem" >
     <span>${rendor.account}</span>
     <span style="margin-left: auto;" >
-      <button style="border: 0; border-radius: 10px; background: #eeeeee; padding: 0.4rem 0.8rem" onclick="copyAccount(this)">복사</button>
+      <button style="border: 0; border-radius: 10px; color: black; background: #eeeeee; padding: 0.4rem 0.8rem" onclick="copyAccount(this)">복사</button>
     </span>
     </div>
      <!-- 이름 -->
