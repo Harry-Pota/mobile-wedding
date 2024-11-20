@@ -28,8 +28,6 @@ document.addEventListener("DOMContentLoaded", () => {
             const isCurrentMonth = current.isSame(targetMonth, "month");
             const isSelected = current.isSame(selectedDate, "day");
 
-
-            console.log(current.month())
             if(current.month() === 1 || current.month() === 3) {
                 datesHtml += `
                     <div

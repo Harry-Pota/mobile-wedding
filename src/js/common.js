@@ -57,106 +57,67 @@ function clickEvent (e) {
   } else {
     $(`.${$className}`).slideUp();
   }
+  //
+  // if($(`.${$className}`).css("display") == "none") {
+  //   $(`.${$className}`).slideDown();
+  // } else {
+  //   $(`.${$className}`).slideUp();
+  // }
 }
 
 // 축하의 마음 전하기
-let groomsAccount = "";
-let brideAccount = "";
+var groomsAccount = "";
+var brideAccount = "";
 
 
 const groomsAccountInfos = [
-  {name: "신랑 최은호", className: "groomAccount", account: "농협 821094-56-013826", phoneNum: "010-9559-3525"},
-  {name: "부) 최명규", className: "groomAccountF", account: "신한은행 110-543-320411", phoneNum: "010-2849-2285"},
-  {name: "모) 이연순", className: "groomAccountM", account: "카카오뱅크 3333-19-9692101", phoneNum: "010-4542-2285"}
+  {name: "최은호", className: "groomAccount", account: "농협 821094-56-013826", phoneNum: "010-9559-3525"},
+  {name: "최명규", className: "groomAccountF", account: "신한은행 110-543-320411", phoneNum: "010-2849-2285"},
+  {name: "이연순", className: "groomAccountM", account: "카카오뱅크 3333-19-9692101", phoneNum: "010-4542-2285"}
 ];
 
 const brideAccountInfos = [
-  {name: "신부 김해니", className: "_brideAccount", account: "신한은행 110-476-947623", phoneNum: "010-5174-0677"},
-  {name: "부) 김진광", className: "_brideAccountF", account: "국민은행 217-24-0125-056", phoneNum: "010-5087-0678"},
-  {name: "모) 김영미", className: "_brideAccountM", account: "국민은행 217-21-0458-402", phoneNum: "010-5063-0674"}
+  {name: "김해니", className: "_brideAccount", account: "신한은행 110-476-947623", phoneNum: "010-5174-0677"},
+  {name: "김진광", className: "_brideAccountF", account: "국민은행 217-24-0125-056", phoneNum: "010-5087-0678"},
+  {name: "김영미", className: "_brideAccountM", account: "국민은행 217-21-0458-402", phoneNum: "010-5063-0674"}
 ];
 
+groomsAccount += `<div class="account-name" onclick="clickEvent(this)">신랑측 계좌번호</div>`
+brideAccount += `<div class="account-name" onclick="clickEvent(this)">신부측 계좌번호</div>`
 
-groomsAccount += `
-  <div class="account-name" onclick="clickEvent(this)">
-    신랑측 계좌번호
-  </div>
-  <div class=${groomsAccountInfos[0].className} style="display: none; height: auto; border: 1px solid black">
+groomsAccountInfos.forEach((rendor,i) => {
+  groomsAccount += `
+  <div class="groomFamilyInfo" style="display: none; height: auto;">
      <!-- 계좌번호 -->
-    <div
-     style="${!groomsAccountInfos[0].name.includes("신랑") ? "padding: 0.5rem 0.5rem 0.5rem 2rem" : "padding: 0.5rem 0.5rem 0.5rem 1rem"}"
-     onclick="copyAccount(this)"
-    >${groomsAccountInfos[0].account}</div>
-    <hr style="margin: 0"/>
-    <!-- 전화번호
-    <div onclick="location.href='sms:${groomsAccountInfos[0].phoneNum}'">
-      ${groomsAccountInfos[0].phoneNum}
+    <div style="display: flex; justify-content: start; padding: 0.5rem 0.5rem 0.5rem 1rem" >
+    <span>${rendor.account}</span>
+    <span style="margin-left: auto;" >
+      <button style="border: 0; border-radius: 10px; background: #eeeeee; padding: 0.4rem 0.8rem" onclick="copyAccount(this)">복사</button>
+    </span>
     </div>
-     -->
+     <!-- 이름 -->
+     <div style="display: flex; justify-content: start; padding: 0.5rem 0.5rem 0.5rem 1rem" onclick="copyAccount(this)">${rendor.name}</div>
+     ${i !== groomsAccountInfos.length - 1 ? "<hr style='margin: 0'/>" : ""}
   </div>
-`;
-brideAccount += `
-  <div class="account-name" onclick="clickEvent(this)">
-    신부측 계좌번호
-  </div>
-    <div class=${brideAccountInfos[0].className} style="display: none; height: auto; border: 1px solid black">
+`
+});
+
+brideAccountInfos.forEach((rendor,i) => (
+  brideAccount += `
+   <div class="brideFamilyInfo" style="display: none; height: auto;">
      <!-- 계좌번호 -->
-    <div
-     style="${!brideAccountInfos[0].name.includes("신부") ? "padding: 0.5rem 0.5rem 0.5rem 2rem" : "padding: 0.5rem 0.5rem 0.5rem 1rem"}"
-     onclick="copyAccount(this)"
-    >${brideAccountInfos[0].account}</div>
-    <hr style="margin: 0"/>
-    <!-- 전화번호
-    <div onclick="location.href='sms:${brideAccountInfos[0].phoneNum}'">
-      ${brideAccountInfos[0].phoneNum}
+    <div style="display: flex; justify-content: start; padding: 0.5rem 0.5rem 0.5rem 1rem" >
+    <span>${rendor.account}</span>
+    <span style="margin-left: auto;" >
+      <button style="border: 0; border-radius: 10px; background: #eeeeee; padding: 0.4rem 0.8rem" onclick="copyAccount(this)">복사</button>
+    </span>
     </div>
-     -->
+     <!-- 이름 -->
+     <div style="display: flex; justify-content: start; padding: 0.5rem 0.5rem 0.5rem 1rem" onclick="copyAccount(this)">${rendor.name}</div>
+     ${i !== brideAccountInfos.length - 1 ? "<hr style='margin: 0'/>" : ""}
   </div>
-`;
-
-// groomsAccountInfos.forEach((rendor) => (
-//     groomsAccount += `
-//     <div class="account-name" onclick="clickEvent(this)" style="${!rendor.name.includes("신랑") && "padding-left: 2rem"}">
-//       ${rendor.name}
-//     </div>
-//     <div class=${rendor.className} style="display: none; height: auto; border: 1px solid black">
-//        <!-- 계좌번호 -->
-//       <div
-//        style="${!rendor.name.includes("신랑") ? "padding: 0.5rem 0.5rem 0.5rem 2rem" : "padding: 0.5rem 0.5rem 0.5rem 1rem"}"
-//        onclick="copyAccount(this)"
-//       >${rendor.account}</div>
-//       <hr style="margin: 0"/>
-//       <!-- 전화번호 -->
-//       <div onclick="location.href='sms:${rendor.phoneNum}'"
-//            style="${!rendor.name.includes("신랑") ? "padding: 0.5rem 0.5rem 0.5rem 2rem" : "padding: 0.5rem 0.5rem 0.5rem 1rem"}"
-//       >
-//         ${rendor.phoneNum}
-//       </div>
-//     </div>
-//  `
-// ))
-
-// brideAccountInfos.forEach((rendor) => (
-//   brideAccount += `
-//     <div class="account-name" onclick="clickEvent(this)" style="${!rendor.name.includes("신부") && "padding-left: 2rem"}">
-//       ${rendor.name}
-//     </div>
-//     <div class=${rendor.className} style="display: none; height: auto; border: 1px solid black">
-//        <!-- 계좌번호 -->
-//       <div
-//        style="${!rendor.name.includes("신부") ? "padding: 0.5rem 0.5rem 0.5rem 2rem" : "padding: 0.5rem 0.5rem 0.5rem 1rem"}"
-//        onclick="copyAccount(this)"
-//       >${rendor.account}</div>
-//       <hr style="margin: 0"/>
-//       <!-- 전화번호 -->
-//       <div onclick="location.href='sms:${rendor.phoneNum}'"
-//            style="${!rendor.name.includes("신부") ? "padding: 0.5rem 0.5rem 0.5rem 2rem" : "padding: 0.5rem 0.5rem 0.5rem 1rem"}"
-//       >
-//         ${rendor.phoneNum}
-//       </div>
-//     </div>
-//  `
-// ))
+`
+));
 
 // 계좌번호 복사 Function
 function copyAccount(e) {
@@ -174,7 +135,7 @@ function copyAccount(e) {
   }
   document.body.removeChild(textArea);
 
-  alertModal("복사되었습니다.");
+  alertModal("계좌번호가 복사되었습니다.");
 };
 
 // alert modal
