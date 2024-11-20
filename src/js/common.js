@@ -89,14 +89,14 @@ groomsAccountInfos.forEach((rendor,i) => {
   groomsAccount += `
   <div class="groomFamilyInfo" style="display: none; height: auto;">
      <!-- 계좌번호 -->
-    <div style="display: flex; justify-content: start; padding: 0.5rem 0.5rem 0.5rem 1rem" >
+    <div style="display: flex; justify-content: start; align-items: center; padding: 0.5rem 0.5rem 0.5rem 1rem" >
     <span>${rendor.account}</span>
     <span style="margin-left: auto;" >
       <button style="border: 0; border-radius: 10px; background: #eeeeee; padding: 0.4rem 0.8rem" onclick="copyAccount(this)">복사</button>
     </span>
     </div>
      <!-- 이름 -->
-     <div style="display: flex; justify-content: start; padding: 0.5rem 0.5rem 0.5rem 1rem">${rendor.name}</div>
+     <div style="display: flex; justify-content: start; align-items: center; padding: 0.5rem 0.5rem 0.5rem 1rem">${rendor.name}</div>
      ${i !== groomsAccountInfos.length - 1 ? "<hr style='margin: 0'/>" : ""}
   </div>
 `
@@ -106,14 +106,14 @@ brideAccountInfos.forEach((rendor,i) => (
   brideAccount += `
    <div class="brideFamilyInfo" style="display: none; height: auto;">
      <!-- 계좌번호 -->
-    <div style="display: flex; justify-content: start; padding: 0.5rem 0.5rem 0.5rem 1rem" >
+    <div style="display: flex; justify-content: start; align-items: center; padding: 0.5rem 0.5rem 0.5rem 1rem" >
     <span>${rendor.account}</span>
     <span style="margin-left: auto;" >
       <button style="border: 0; border-radius: 10px; background: #eeeeee; padding: 0.4rem 0.8rem" onclick="copyAccount(this)">복사</button>
     </span>
     </div>
      <!-- 이름 -->
-     <div style="display: flex; justify-content: start; padding: 0.5rem 0.5rem 0.5rem 1rem">${rendor.name}</div>
+     <div style="display: flex; justify-content: start; align-items: center; padding: 0.5rem 0.5rem 0.5rem 1rem">${rendor.name}</div>
      ${i !== brideAccountInfos.length - 1 ? "<hr style='margin: 0'/>" : ""}
   </div>
 `
