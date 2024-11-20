@@ -96,7 +96,7 @@ groomsAccountInfos.forEach((rendor,i) => {
     </span>
     </div>
      <!-- 이름 -->
-     <div style="display: flex; justify-content: start; padding: 0.5rem 0.5rem 0.5rem 1rem" onclick="copyAccount(this)">${rendor.name}</div>
+     <div style="display: flex; justify-content: start; padding: 0.5rem 0.5rem 0.5rem 1rem">${rendor.name}</div>
      ${i !== groomsAccountInfos.length - 1 ? "<hr style='margin: 0'/>" : ""}
   </div>
 `
@@ -113,7 +113,7 @@ brideAccountInfos.forEach((rendor,i) => (
     </span>
     </div>
      <!-- 이름 -->
-     <div style="display: flex; justify-content: start; padding: 0.5rem 0.5rem 0.5rem 1rem" onclick="copyAccount(this)">${rendor.name}</div>
+     <div style="display: flex; justify-content: start; padding: 0.5rem 0.5rem 0.5rem 1rem">${rendor.name}</div>
      ${i !== brideAccountInfos.length - 1 ? "<hr style='margin: 0'/>" : ""}
   </div>
 `
