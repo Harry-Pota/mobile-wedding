@@ -174,7 +174,75 @@ function copyAccount(e) {
   }
   document.body.removeChild(textArea);
 
-  window.alert("복사되었습니다.");
+  alertModal("복사되었습니다.");
+};
+
+// alert modal
+function alertModal(title) {
+  alertHtml = '';
+
+  alertHtml += '<div id="modalBack"></div>';
+  alertHtml += '<div class="modal">';
+  alertHtml += '<div class="modal_content">';
+  alertHtml += '<div class="modal_content_body">' + title + '</div>';
+  alertHtml += '<hr style="margin-bottom: 25px"/>';
+  alertHtml += '<div class="modal_content_button"><div id="modal_submit" onclick="hideModal()">확인</div></div>';
+  alertHtml += '</div>';
+  alertHtml += '</div>';
+
+  $('body').append(alertHtml);
+  $('#modalBack').css({
+    'width': window.document.body.clientWidth, 'height': $(document).height() * 1.2
+    , 'top': '0', 'left': '0', 'right': '0', 'bottom': '0'
+    , 'backgroundColor': '#000000', 'opacity': '0.4'
+    , 'position': 'fixed'
+    , 'z-index': '998'
+    , 'overflow': 'hidden'
+    , 'touch-action': 'none'
+  });
+
+  $(".modal").css({
+    'position': 'fixed',
+    'width': window.document.body.clientWidth / 1.5,
+    'height': $(document).height() / 30,
+    'backgroundColor': '#FFFFFF',
+    'top': '40%',
+    'left': '16%',
+    'border-radius': '30px',
+    'z-index': '999',
+    'overflow': 'hidden',
+    'touch-action': 'none',
+  });
+
+  const modalHeight = $('.modal').css({})[0].attributes[1].nodeValue.split(';')[2].replace(/[^.0-9]/g, '').split('.')[0];
+
+  $(".modal_content_body").css({
+    'margin': `${modalHeight / 4}px 0`,
+    'font-size': modalHeight / 9,
+    'text-align': 'center',
+    'line-height': 'auto',
+    'font-weight': '400',
+    'font-style': 'normal',
+    'font-family': '"Gowun Dodum", sans-serif',
+    'overflow': 'hidden',
+    'touch-action': 'none',
+  });
+
+  $("#modal_submit").css({
+    'font-weight': 'bolder',
+    'color': '#6042F9',
+    'position': 'absolute',
+    'bottom': '1rem',
+    'text-align': 'center',
+    'width': '100%',
+    'font-size': '1rem',
+    'overflow': 'hidden',
+    'touch-action': 'none'
+  });
+};
+
+function hideModal() {
+  $("#modalBack, .modal").remove();
 };
 
 $(".swiper-wrapper").append(swiperDivsion);
