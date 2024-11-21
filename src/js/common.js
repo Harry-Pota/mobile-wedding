@@ -281,11 +281,11 @@ function showCallModal() {
                       `
   groomsAccountInfos.forEach((render) => {
     callModalHTML += `<div style="display: flex; flex-direction: row; justify-content: space-between; margin: 1rem 0">
-                        <div>${render.tag}</div>
-                        <div style="${render.tag === "신랑" && "margin-left: 3rem"}">${render.name}</div>
-                        <div>
+                        <div style="display:flex; align-items:center; font-size: 0.8rem; color: #999999; justify-content: flex-end">${render.tag}</div>
+                        <div style="${render.tag === "신랑" && "margin-left: 2.3rem"}; display:flex; align-items:center;">${render.name}</div>
+                        <div style="display:flex; align-items:center;">
                           <i class="fa-solid fa-phone" 
-                             style="margin-right: 1rem; color: #999999" 
+                             style="margin-right: 1.2rem; color: #999999" 
                              onclick="location.href='tel:${render.phoneNum}'"></i>
                           <i class="fa-solid fa-envelope" 
                              style="color: #999999"
@@ -305,11 +305,11 @@ function showCallModal() {
                       `
   brideAccountInfos.forEach((render) => {
     callModalHTML += `<div style="display: flex; flex-direction: row; justify-content: space-between; margin: 1rem 0">
-                        <div>${render.tag}</div>
-                        <div style="${render.tag === "신부" && "margin-left: 2.9rem"}">${render.name}</div>
-                        <div>
+                        <div style="display:flex; align-items:center; font-size: 0.8rem; color: #999999">${render.tag}</div>
+                        <div style="${render.tag === "신부" && "margin-left: 2.2rem"}; display:flex; align-items:center;">${render.name}</div>
+                        <div style="display:flex; align-items:center;">
                           <i class="fa-solid fa-phone" 
-                             style="margin-right: 1rem; color: #999999" 
+                             style="margin-right: 1.2rem; color: #999999" 
                              onclick="location.href='tel:${render.phoneNum}'"></i>
                           <i class="fa-solid fa-envelope" 
                              style="color: #999999"
