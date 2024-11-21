@@ -11,8 +11,8 @@
   margin: 0 auto;
   /* position: fixed; */
   text-align: center;
-  /* overflow: scroll; */
-  background-color: seashell;
+   overflow-x: hidden;
+  background-color: #FFFFFF;
 }
 
 footer {
@@ -113,8 +113,8 @@ img {-webkit-touch-callout:none;}
   justify-content: center;
   align-items: center;
   height: 2.2rem;
-  padding-left: 1rem;
   background-color: #ffe4b2;
+  border-radius: 10px;
 }
 
 #calendar {

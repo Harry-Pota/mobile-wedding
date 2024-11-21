@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/6b670e2f6c.js" crossorigin="anonymous"></script>
 
 
     <!-- google font -->
@@ -34,7 +34,7 @@
       <div>
         <img id="main-img" src="./public/assets/main-division-poto.jpeg" alt="mainImage" height="auto" />
       </div>
-      <div style="margin: 60px auto">
+      <div style="margin: 60px auto; line-height: 1.2rem">
         <div class="main-name">
           <span class="main-name left"></span>
           <span>|</span>
@@ -56,12 +56,6 @@
           귀한 걸음으로 오셔서 축하해 주신다면<br/>
           그날의 기쁨과 격려로<br/>
           평생 행복한 그날을 간직하며 살겠습니다.
-<!--          서로가 마주보며 다져온 사랑을<br />-->
-<!--          이제 함께 한 곳을 바라보며<br />-->
-<!--          걸어갈 수 있는 큰 사랑으로 키우고자 합니다.<br />-->
-<!--          저희 두 사람이 사랑의 이름으로<br />-->
-<!--          지켜나갈 수 있게 앞날을<br />-->
-<!--          축복해 주시면 감사하겠습니다.-->
         </div>
         <div style=" margin: 40px auto; height: auto; line-height: 2rem; font-weight: 500;">
           귀한걸음으로 축복해주시면<br />
@@ -71,10 +65,15 @@
       <div style="line-height: 2rem; margin: 10px auto">
         <span style="letter-spacing: 2px">최명규</span> |
         <span style="letter-spacing: 2px">이연순</span>
-        <span style="font-size: 0.8rem">장남</span> 은호<br />
+        <span style="font-size: 0.8rem; margin: 0 0.3rem">장남</span>
+        <span style="font-weight: 500; letter-spacing: 0.2rem">은호</span>
+        <br />
         <span style="letter-spacing: 2px">김진광</span> |
         <span style="letter-spacing: 2px">김영미</span>
-        <span style="font-size: 0.8rem">장녀</span> 해니
+        <span style="font-size: 0.8rem; margin: 0 0.3rem">장녀</span>
+        <span style="font-weight: 500; letter-spacing: 0.2rem">해니</span>
+
+        <div id="call" style="margin: 1rem 0"></div>
       </div>
       <!-- 인사말 end -->
       <!-- 예식일시 start -->
@@ -118,23 +117,30 @@
       <!-- <div class="middle-title">주차 안내</div> -->
       <div class="location-inner">
         <div>
-          <div class="location-title">> 지하철</div>
-          <div class="location-description"> 수인분당선 수원시청역 10번출구 (도보 1분거리)</div>
+          <br/>
+          <div class="location-title"><i class="fa-solid fa-train-subway" style="margin-right: 0.2rem"></i> 지하철</div>
+          <div class="location-description">
+            <i class="fa-solid fa-circle" style="font-size: 0.4rem; vertical-align: middle; color: #F4C300; margin-right: 0.3rem"></i>
+            수인분당선 수원시청역 10번출구 (도보 1분거리)
+          </div>
         </div>
         <div style="margin : 30px 0">
-          <div class="location-title">> 버스</div>
-          <div class="location-description"> 
-            역전정류장 : 13-1, 92-1<br>
-            -> 수원시청역 9번 출구, 국민연금공단 하차<br>
-            매산시장앞 : 51<br>
-            -> 수원시청역 1번 출구, 국민연금공단, 경인일보 하차<br>
-            아주대,법원사거리 : 81<br>
-            -> 수원시청역 10번 출구, 국민연금공단, 경인일보 하차
+          <div class="location-title"><i class="fa-solid fa-bus" style="margin-right: 0.2rem"></i> 버스</div>
+          <div class="location-description">
+            <i class="fa-solid fa-circle" style="font-size: 0.4rem; vertical-align: middle; color: green; margin-right: 0.3rem"></i> 역전정류장 : 13-1, 92-1<br>
+            <span style="padding-left: 1rem"><span style="margin-right: 0.2rem">☞</span> 수원시청역 9번 출구, 국민연금공단 하차</span> <br>
+            <i class="fa-solid fa-circle" style="font-size: 0.4rem; vertical-align: middle; color: green; margin-right: 0.3rem"></i> 매산시장앞 : 51<br>
+            <span style="padding-left: 1rem"><span style="margin-right: 0.2rem">☞</span> 수원시청역 1번 출구, 국민연금공단, 경인일보 하차</span> <br>
+            <i class="fa-solid fa-circle" style="font-size: 0.4rem; vertical-align: middle; color: green; margin-right: 0.3rem"></i>아주대,법원사거리 : 81<br>
+            <span style="padding-left: 1rem"><span style="margin-right: 0.2rem">☞</span> 수원시청역 10번 출구, 국민연금공단, 경인일보 하차</span>
           </div>
         </div>
         <div>
-          <div class="location-title">> 주차안내</div>
-          <div class="location-description"> 웨딩홀 입구에서 주차요원 안내를 받으시길 바랍니다.<br>(경인일보, 대원콤비프라자, 경기아트센터)</div>
+          <div class="location-title"><i class="fa-solid fa-square-parking" style="margin-right: 0.3rem"></i> 주차안내</div>
+          <div class="location-description">
+            <i class="fa-solid fa-circle" style="font-size: 0.4rem; vertical-align: middle; color: #6042F9; margin-right: 0.3rem"></i> 웨딩홀 입구에서 주차요원 안내를 받으시길 바랍니다.<br>
+            <span style="padding-left: 1rem">(경인일보, 대원콤비프라자, 경기아트센터)</span>
+          </div>
         </div>
       </div>
       <!-- 주차안내 end -->
@@ -142,10 +148,10 @@
       <!-- 마음전할 곳 start  -->
       <div class="middle-title">축하의 마음 전하기</div>
       <div style="font-size: 0.8rem; color: #5a5f66; text-align: center; line-height: 1rem">축하의 마음을 담아 축의금을 전달해 보세요.<br/>복사 버튼을 클릭해 계좌번호를 복사할 수 있습니다.</div>
-      <div class="account" style="margin: 10px auto; border:1px solid #eeeeee; box-shadow: 0 4px 8px rgba(255,228,178, 0.1); border-radius: 2%; width: 85%;">
+      <div class="account" style="margin: 10px auto; border:1px solid #999999; box-shadow: 0 4px 8px rgba(255,228,178, 0.1); border-radius: 10px; width: 85%;">
         <div class="grooms"></div>
       </div>
-      <div class="account" style="margin: 10px auto; border:1px solid #eeeeee; box-shadow: 0 4px 8px rgba(255,228,178, 0.1); border-radius: 2%; width: 85%">
+      <div class="account" style="margin: 10px auto; border:1px solid #999999; box-shadow: 0 4px 8px rgba(255,228,178, 0.1); border-radius: 10px; width: 85%">
         <div class="brides"></div>
       </div>
       <div></div>

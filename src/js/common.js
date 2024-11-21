@@ -36,6 +36,7 @@ if (userAgent.match("android") != null) {
 const bodyWidth = window.document.body.clientWidth;
 
 if (mobileOs.myMobileOs === "etc") {
+  $("#root").css("width", `360px`);
   $("#main-img").css("width", `${bodyWidth / 3.5}px`);
   $("swiper").css("width", `${bodyWidth / 3.5}px`);
 } else {
@@ -54,15 +55,25 @@ function clickEvent (e) {
 
   if($(`.${$className}`).css("display") == "none") {
     $(`.${$className}`).slideDown();
+
+    if($className.includes("groom")) {
+      $(`#account-name-id-groom`).css({"border-radius": "10px 10px 0 0"});
+    }
+
+    if($className.includes("bride")) {
+      $(`#account-name-id-bride`).css({"border-radius": "10px 10px 0 0"});
+    }
   } else {
     $(`.${$className}`).slideUp();
+
+    if($className.includes("groom")) {
+      $(`#account-name-id-groom`).css({"border-radius": "10px"});
+    }
+
+    if($className.includes("bride")) {
+      $(`#account-name-id-bride`).css({"border-radius": "10px"});
+    }
   }
-  //
-  // if($(`.${$className}`).css("display") == "none") {
-  //   $(`.${$className}`).slideDown();
-  // } else {
-  //   $(`.${$className}`).slideUp();
-  // }
 }
 
 // 축하의 마음 전하기
@@ -71,19 +82,19 @@ var brideAccount = "";
 
 
 const groomsAccountInfos = [
-  {name: "최은호", className: "groomAccount", account: "농협 821094-56-013826", phoneNum: "010-9559-3525"},
-  {name: "최명규", className: "groomAccountF", account: "신한은행 110-543-320411", phoneNum: "010-2849-2285"},
-  {name: "이연순", className: "groomAccountM", account: "카카오뱅크 3333-19-9692101", phoneNum: "010-4542-2285"}
+  {tag: "신랑", name: "최은호", className: "groomAccount", account: "농협 821094-56-013826", phoneNum: "010-9559-3525"},
+  {tag: "신랑 아버지", name: "최명규", className: "groomAccountF", account: "신한은행 110-543-320411", phoneNum: "010-2849-2285"},
+  {tag: "신랑 어머니", name: "이연순", className: "groomAccountM", account: "카카오뱅크 3333-19-9692101", phoneNum: "010-4542-2285"}
 ];
 
 const brideAccountInfos = [
-  {name: "김해니", className: "_brideAccount", account: "신한은행 110-476-947623", phoneNum: "010-5174-0677"},
-  {name: "김진광", className: "_brideAccountF", account: "국민은행 217-24-0125-056", phoneNum: "010-5087-0678"},
-  {name: "김영미", className: "_brideAccountM", account: "국민은행 217-21-0458-402", phoneNum: "010-5063-0674"}
+  {tag: "신부", name: "김해니", className: "_brideAccount", account: "신한은행 110-476-947623", phoneNum: "010-5174-0677"},
+  {tag: "신부 아버지", name: "김진광", className: "_brideAccountF", account: "국민은행 217-24-0125-056", phoneNum: "010-5087-0678"},
+  {tag: "신부 어머니", name: "김영미", className: "_brideAccountM", account: "국민은행 217-21-0458-402", phoneNum: "010-5063-0674"}
 ];
 
-groomsAccount += `<div class="account-name" onclick="clickEvent(this)">신랑측 계좌번호</div>`
-brideAccount += `<div class="account-name" onclick="clickEvent(this)">신부측 계좌번호</div>`
+groomsAccount += `<div class="account-name" id="account-name-id-groom" onclick="clickEvent(this)">신랑측 마음 전하기</div>`
+brideAccount += `<div class="account-name" id="account-name-id-bride" onclick="clickEvent(this)">신부측 마음 전하기</div>`
 
 groomsAccountInfos.forEach((rendor,i) => {
   groomsAccount += `
@@ -96,8 +107,8 @@ groomsAccountInfos.forEach((rendor,i) => {
     </span>
     </div>
      <!-- 이름 -->
-     <div style="display: flex; justify-content: start; align-items: center; padding: 0.5rem 0.5rem 0.5rem 1rem">${rendor.name}</div>
-     ${i !== groomsAccountInfos.length - 1 ? "<hr style='margin: 0'/>" : ""}
+     <div style="display: flex; justify-content: start; align-items: center; padding: 0.5rem 0.5rem 1rem 1rem">${rendor.name}</div>
+     ${i !== groomsAccountInfos.length - 1 ? "<hr style='margin: 0; border-width:1px 0 0 0; border-style:dashed; background-color: #eeeeee'/>" : ""}
   </div>
 `
 });
@@ -113,11 +124,34 @@ brideAccountInfos.forEach((rendor,i) => (
     </span>
     </div>
      <!-- 이름 -->
-     <div style="display: flex; justify-content: start; align-items: center; padding: 0.5rem 0.5rem 0.5rem 1rem">${rendor.name}</div>
-     ${i !== brideAccountInfos.length - 1 ? "<hr style='margin: 0'/>" : ""}
+     <div style="display: flex; justify-content: start; align-items: flex-start; padding: 0.5rem 0.5rem 1rem 1rem">${rendor.name}</div>
+     ${i !== brideAccountInfos.length - 1 ? "<hr style='margin: 0; border-width:1px 0 0 0; border-style:dashed; background-color: #eeeeee'/>" : ""}
   </div>
 `
 ));
+
+
+// 연라하기
+const call = `
+  <button 
+    style="background-color: #ffe4b2; 
+           border: 0;
+           border-radius: 10px;
+           padding: 0.7rem 4rem;
+           font-size: 1.1rem;
+           letter-spacing: 0.2rem;
+           color: #000000"
+    onclick="onCall()"
+  >
+    <i class="fa-solid fa-phone" style="margin-right: 1rem; color: #999999"></i>
+    연락하기
+  </button>
+`
+
+function onCall() {
+  showCallModal();
+}
+
 
 // 계좌번호 복사 Function
 function copyAccount(e) {
@@ -135,7 +169,7 @@ function copyAccount(e) {
   }
   document.body.removeChild(textArea);
 
-  alertModal("계좌번호가 복사되었습니다.");
+  alertModal("복사되었습니다.");
 };
 
 // alert modal
@@ -146,7 +180,7 @@ function alertModal(title) {
   alertHtml += '<div class="modal">';
   alertHtml += '<div class="modal_content">';
   alertHtml += '<div class="modal_content_body">' + title + '</div>';
-  alertHtml += '<hr style="margin-bottom: 25px"/>';
+  alertHtml += '<hr style="margin-bottom: 25px; border-color: #f4f4f4"/>';
   alertHtml += '<div class="modal_content_button"><div id="modal_submit" onclick="hideModal()">확인</div></div>';
   alertHtml += '</div>';
   alertHtml += '</div>';
@@ -209,6 +243,8 @@ function hideModal() {
 $(".swiper-wrapper").append(swiperDivsion);
 $(".grooms").append(groomsAccount);
 $(".brides").append(brideAccount);
+$("#call").append(call);
+
 
 $(".main-name.left").text(weddingInfo.bride.name);
 $(".main-name.right").text(weddingInfo.groom.name);
@@ -217,3 +253,94 @@ $(".main-wedding-venu").text(weddingInfo.venu);
 $(".location-info").text(weddingInfo.venu);
 $(".location-info-address").text(weddingInfo.address);
 
+
+
+
+
+function showCallModal() {
+  callModalHTML = '';
+
+  callModalHTML += '<div class="callModal">';
+  callModalHTML += '<div class="callModal_content" style="margin:1.5rem">';
+  callModalHTML += `<div class="callModal_content_body" style="color: white;">
+                      <div id="callModal_submit" onclick="hideCallModal()" style="text-align: right">
+                        <i class="fa-solid fa-xmark" style="color: #999999; font-size: 2rem;"></i>
+                      </div>
+                      <div style="text-align: center; margin: 1rem auto; line-height: 1.5rem">
+                        <span style="color: #999999; font-size: 0.8rem; letter-spacing: 0.2rem">CONTACT</span>
+                        <br/>
+                        <span style="font-size: 1.2rem; letter-spacing: 0.2rem; font-weight: 700">연락하기</span>
+                      </div>
+                      <div style="margin:3rem 1.5rem">
+                        <div>
+                          <span style="letter-spacing: 0.2rem;">신랑측</span>
+                          <span style="font-size: 0.7rem; color: #999999; letter-spacing: 0.2rem;">GROOM</span>
+                        </div>
+                        <hr style="border-width:1px 0 0 0; border-style:dotted"/>
+                        <div style="display: flex; flex-direction: column">
+                      `
+  groomsAccountInfos.forEach((render) => {
+    callModalHTML += `<div style="display: flex; flex-direction: row; justify-content: space-between; margin: 1rem 0">
+                        <div>${render.tag}</div>
+                        <div style="${render.tag === "신랑" && "margin-left: 3rem"}">${render.name}</div>
+                        <div>
+                          <i class="fa-solid fa-phone" 
+                             style="margin-right: 1rem; color: #999999" 
+                             onclick="location.href='tel:${render.phoneNum}'"></i>
+                          <i class="fa-solid fa-envelope" 
+                             style="color: #999999"
+                             onclick="location.href='sms:${render.phoneNum}'"></i>
+                        </div>
+                      </div>
+    `
+  })
+  callModalHTML += `</div></div>
+                      <div style="margin:3rem 1.5rem">
+                        <div>
+                          <span style="letter-spacing: 0.2rem;">신부측</span>
+                          <span style="font-size: 0.7rem; color: #999999; letter-spacing: 0.2rem;">BRIDE</span>
+                        </div>
+                        <hr style="border-width:1px 0 0 0; border-style:dotted" />
+                        <div style="display: flex; flex-direction: column">
+                      `
+  brideAccountInfos.forEach((render) => {
+    callModalHTML += `<div style="display: flex; flex-direction: row; justify-content: space-between; margin: 1rem 0">
+                        <div>${render.tag}</div>
+                        <div style="${render.tag === "신부" && "margin-left: 2.9rem"}">${render.name}</div>
+                        <div>
+                          <i class="fa-solid fa-phone" 
+                             style="margin-right: 1rem; color: #999999" 
+                             onclick="location.href='tel:${render.phoneNum}'"></i>
+                          <i class="fa-solid fa-envelope" 
+                             style="color: #999999"
+                             onclick="location.href='sms:${render.phoneNum}'"></i>
+                        </div>
+                      </div>
+    `
+  })
+  callModalHTML += `</div></div>
+                    </div>`;
+  callModalHTML += '</div>';
+  callModalHTML += '</div>';
+
+  $('body').append(callModalHTML);
+
+  $(".callModal").css({
+    'font-weight': '400',
+    'font-style': 'normal',
+    'font-family': '"Gowun Dodum", sans-serif',
+    'position': 'fixed',
+    'width': window.document.body.clientWidth,
+    'height': $(document).height(),
+    'backgroundColor': '#843333', opacity: '0.98',
+    'top': '0',
+    'left': '0',
+    'z-index': '999',
+    'overflow': 'hidden',
+    'touch-action': 'none',
+  });
+};
+
+function hideCallModal() {
+  $(".callModal").remove();
+};
