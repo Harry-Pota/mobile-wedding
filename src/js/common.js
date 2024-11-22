@@ -46,6 +46,7 @@ if (mobileOs.myMobileOs === "etc") {
 let swiperDivsion = "";
 
 for (let i = 1; i <= 20; i++) {
+  if(i === 6 ) continue;
   swiperDivsion += `<div class="swiper-slide"><img id="swiper-image${i}" src="./public/assets/swiper_image${i}.jpeg" alt="swiper_image${i}" height="auto"/></div>`;
 }
 
