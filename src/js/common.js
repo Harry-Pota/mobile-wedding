@@ -37,7 +37,6 @@ const bodyWidth = window.document.body.clientWidth;
 
 if (mobileOs.myMobileOs === "etc") {
   $("#root").css("width", `360px`);
-  $("#main-img").css("width", `${bodyWidth / 3.5}px`);
   $("swiper").css("width", `${bodyWidth / 3.5}px`);
 } else {
   $("#main-img").css("width", `${bodyWidth}px`);
@@ -50,27 +49,27 @@ for (let i = 1; i <= 20; i++) {
   swiperDivsion += `<div class="swiper-slide"><img id="swiper-image${i}" src="./public/assets/swiper_image${i}.jpeg" alt="swiper_image${i}" height="auto"/></div>`;
 }
 
-function clickEvent (e) {
+function clickEvent(e) {
   const $className = e.nextSibling.nextSibling.className;
 
-  if($(`.${$className}`).css("display") == "none") {
+  if ($(`.${$className}`).css("display") == "none") {
     $(`.${$className}`).slideDown();
 
-    if($className.includes("groom")) {
+    if ($className.includes("groom")) {
       $(`#account-name-id-groom`).css({"border-radius": "10px 10px 0 0"});
     }
 
-    if($className.includes("bride")) {
+    if ($className.includes("bride")) {
       $(`#account-name-id-bride`).css({"border-radius": "10px 10px 0 0"});
     }
   } else {
     $(`.${$className}`).slideUp();
 
-    if($className.includes("groom")) {
+    if ($className.includes("groom")) {
       $(`#account-name-id-groom`).css({"border-radius": "10px"});
     }
 
-    if($className.includes("bride")) {
+    if ($className.includes("bride")) {
       $(`#account-name-id-bride`).css({"border-radius": "10px"});
     }
   }
@@ -96,7 +95,7 @@ const brideAccountInfos = [
 groomsAccount += `<div class="account-name" id="account-name-id-groom" onclick="clickEvent(this)">신랑측 마음 전하기</div>`
 brideAccount += `<div class="account-name" id="account-name-id-bride" onclick="clickEvent(this)">신부측 마음 전하기</div>`
 
-groomsAccountInfos.forEach((rendor,i) => {
+groomsAccountInfos.forEach((rendor, i) => {
   groomsAccount += `
   <div class="groomFamilyInfo" style="display: none; height: auto;">
      <!-- 계좌번호 -->
@@ -113,8 +112,8 @@ groomsAccountInfos.forEach((rendor,i) => {
 `
 });
 
-brideAccountInfos.forEach((rendor,i) => (
-  brideAccount += `
+brideAccountInfos.forEach((rendor, i) => (
+    brideAccount += `
    <div class="brideFamilyInfo" style="display: none; height: auto;">
      <!-- 계좌번호 -->
     <div style="display: flex; justify-content: start; align-items: center; padding: 0.5rem 0.5rem 0.5rem 1rem" >
@@ -137,7 +136,7 @@ const call = `
     style="background-color: #ffe4b2; 
            border: 0;
            border-radius: 10px;
-           padding: 0.7rem 4rem;
+           padding: 0.7rem 1.5rem;
            font-size: 1.1rem;
            letter-spacing: 0.2rem;
            color: #000000"
@@ -158,7 +157,7 @@ function copyAccount(e) {
   const $account = e.innerText;
 
   const textArea = document.createElement("textarea");
-  textArea.value =  $account;
+  textArea.value = $account;
   document.body.appendChild(textArea);
   textArea.focus();
   textArea.select();
@@ -252,9 +251,6 @@ $(".main-wedding-date").text(weddingInfo.date);
 $(".main-wedding-venu").text(weddingInfo.venu);
 $(".location-info").text(weddingInfo.venu);
 $(".location-info-address").text(weddingInfo.address);
-
-
-
 
 
 function showCallModal() {
