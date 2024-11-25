@@ -45,8 +45,7 @@ if (mobileOs.myMobileOs === "etc") {
 
 let swiperDivsion = "";
 
-for (let i = 1; i <= 20; i++) {
-  if(i === 6 ) continue;
+for (let i = 1; i <= 21; i++) {
   swiperDivsion += `<div class="swiper-slide"><img id="swiper-image${i}" src="./public/assets/swiper_image${i}.jpeg" alt="swiper_image${i}" height="auto"/></div>`;
 }
 
@@ -143,7 +142,7 @@ const call = `
            color: #000000"
     onclick="onCall()"
   >
-    <i class="fa-solid fa-phone" style="margin-right: 1rem; color: #999999"></i>
+    <i class="fa-solid fa-phone" style="margin-right: 0.2rem; color: #999999"></i>
     연락하기
   </button>
 `
