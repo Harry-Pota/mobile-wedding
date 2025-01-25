@@ -1,212 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1.0, user-scalable=no">
 
-    <!-- cdn -->
-    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
-    <script src="https://kit.fontawesome.com/6b670e2f6c.js" crossorigin="anonymous"></script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1.0, user-scalable=no">
+
+  <!-- cdn -->
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+  <script src="https://kit.fontawesome.com/6b670e2f6c.js" crossorigin="anonymous"></script>
 
 
-    <!-- google font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Nanum+Gothic&family=Noto+Sans+KR:wght@100..900&family=Noto+Serif+KR:wght@200..900&display=swap" rel="stylesheet">
+  <!-- google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Nanum+Gothic&family=Noto+Sans+KR:wght@100..900&family=Noto+Serif+KR:wght@200..900&display=swap"
+    rel="stylesheet">
 
-    <!-- css -->
-    <link rel="stylesheet" href="./src/css/index.css" />
-    <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+  <!-- css -->
+  <link rel="stylesheet" href="./src/css/index.css" />
+  <script charset="UTF-8" class="daum_roughmap_loader_script"
+    src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
 
-    <!-- tab favicon & title -->
-    <link rel="icon" type="image/x-icon" href="./public/assets/free-icon-hearts-2589108.png" />
-    <!-- <a href="https://www.flaticon.com/kr/free-icons/" title="하트 아이콘">하트 아이콘 제작자: Vlad Szirka - Flaticon</a> -->
-    <title>은호❤️해니 결혼식에 초대합니다.</title>
-  </head>
+  <!-- tab favicon & title -->
+  <link rel="icon" type="image/x-icon" href="./public/assets/free-icon-hearts-2589108.png" />
+  <!-- <a href="https://www.flaticon.com/kr/free-icons/" title="하트 아이콘">하트 아이콘 제작자: Vlad Szirka - Flaticon</a> -->
+  <title>은호❤️해니 결혼식에 초대합니다.</title>
+</head>
 
-  <body oncontextmenu="return false">
-    <div id="root">
-      <!-- Top start-->
-      <div>
-        <img id="main-img" src="./public/assets/main-division-poto.jpeg" alt="mainImage" height="auto" width="100%" />
-      </div>
-      <div style="margin: 60px auto; line-height: 1.2rem">
-        <div class="main-name">
-          <span class="main-name left"></span>
-          <span>|</span>
-          <span class="main-name right"></span>
-        </div>
-        <div class="main-wedding-date"></div>
-        <div class="main-wedding-venu"></div>
-      </div>
-      <!-- Top end-->
-
-      <!-- 인사말 start -->
-      <div class="middle-title">인사말</div>
-      <div style="margin: 50px auto">
-        <div style="height: auto; line-height: 2rem; font-weight: 500">
-          사랑하는 이들에게 나란한 이름으로 보내는<br/>
-          첫 번째 편지.<br/><br/>
-          한곳을 바라보며 첫걸음을 걷는 날<br/>
-          늘 곁에서 아껴주셨던 감사한 분들을 모십니다.<br/><br/>
-          귀한 걸음으로 오셔서 축하해 주신다면<br/>
-          그날의 기쁨과 격려로<br/>
-          평생 행복한 그날을 간직하며 살겠습니다.
-        </div>
-        <div style=" margin: 40px auto; height: auto; line-height: 2rem; font-weight: 500;">
-          귀한걸음으로 축복해주시면<br />
-          더 없는 기쁨으로 간직하겠습니다.<br />
-        </div>
-      </div>
-      <div style="line-height: 2rem; margin: 10px auto">
-        <span style="letter-spacing: 2px">최명규</span> |
-        <span style="letter-spacing: 2px">이연순</span>
-        <span style="font-size: 0.8rem; margin: 0 0.3rem">장남</span>
-        <span style="font-weight: 500; letter-spacing: 0.2rem">은호</span>
-        <br />
-        <span style="letter-spacing: 2px">김진광</span> |
-        <span style="letter-spacing: 2px">김영미</span>
-        <span style="font-size: 0.8rem; margin: 0 0.3rem">장녀</span>
-        <span style="font-weight: 500; letter-spacing: 0.2rem">해니</span>
-
-        <div id="call" style="margin: 1rem 0"></div>
-      </div>
-      <!-- 인사말 end -->
-      <!-- 예식일시 start -->
-      <div class="middle-title">예식일시</div>
-      <div id="calendar">
-        <div class="header">
-          <span id="currentMonth"></span>
-        </div>
-        <div class="days">
-          <div class="day" style="color: red">일</div>
-          <div class="day">월</div>
-          <div class="day">화</div>
-          <div class="day">수</div>
-          <div class="day">목</div>
-          <div class="day">금</div>
-          <div class="day">토</div>
-        </div>
-        <div id="dates"></div>
-      </div>
-      <!-- 예식일시 end -->
-      
-      <div class="middle-title">사진첩</div>
-      <div class="swiper mySwiper2">
-        <div class="swiper-wrapper"></div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-      </div>
-      <div thumbsSlider="" class="swiper mySwiper">
-        <div class="swiper-wrapper"></div>
-      </div>
-      <!-- 카카오맵  start -->
-      <div class="middle-title">오시는길</div>
-      <div class="location-info"></div>
-      <div class="location-info-address"></div>
-      <div
-        id="daumRoughmapContainer1724175434169"
-        class="root_daum_roughmap root_daum_roughmap_landing"
-      ></div>
-      <!-- 카카오맵 end -->
-      <!-- 주차안내  start -->
-      <!-- <div class="middle-title">주차 안내</div> -->
-      <div class="location-inner">
-        <div>
-          <br/>
-          <div class="location-title"><i class="fa-solid fa-train-subway" style="margin-right: 0.2rem"></i> 지하철</div>
-          <div class="location-description">
-            <i class="fa-solid fa-circle" style="font-size: 0.4rem; vertical-align: middle; color: #F4C300; margin-right: 0.3rem"></i>
-            수인분당선 수원시청역 10번출구 (도보 1분거리)
-          </div>
-        </div>
-        <div style="margin : 30px 0">
-          <div class="location-title"><i class="fa-solid fa-bus" style="margin-right: 0.2rem"></i> 버스</div>
-          <div class="location-description">
-            <i class="fa-solid fa-circle" style="font-size: 0.4rem; vertical-align: middle; color: green; margin-right: 0.3rem"></i> 역전정류장 : 13-1, 92-1<br>
-            <span style="padding-left: 1rem"><span style="margin-right: 0.2rem">☞</span> 수원시청역 9번 출구, 국민연금공단 하차</span> <br>
-            <i class="fa-solid fa-circle" style="font-size: 0.4rem; vertical-align: middle; color: green; margin-right: 0.3rem"></i> 매산시장앞 : 51<br>
-            <span style="padding-left: 1rem"><span style="margin-right: 0.2rem">☞</span> 수원시청역 1번 출구, 국민연금공단, 경인일보 하차</span> <br>
-            <i class="fa-solid fa-circle" style="font-size: 0.4rem; vertical-align: middle; color: green; margin-right: 0.3rem"></i>아주대,법원사거리 : 81<br>
-            <span style="padding-left: 1rem"><span style="margin-right: 0.2rem">☞</span> 수원시청역 10번 출구, 국민연금공단, 경인일보 하차</span>
-          </div>
-        </div>
-        <div>
-          <div class="location-title"><i class="fa-solid fa-square-parking" style="margin-right: 0.3rem"></i> 주차안내</div>
-          <div class="location-description">
-            <i class="fa-solid fa-circle" style="font-size: 0.4rem; vertical-align: middle; color: #6042F9; margin-right: 0.3rem"></i> 웨딩홀 입구에서 주차요원 안내를 받으시길 바랍니다.<br>
-            <span style="padding-left: 1rem">(경인일보, 대원콤비프라자, 경기아트센터)</span>
-          </div>
-        </div>
-      </div>
-      <!-- 주차안내 end -->
-
-      <!-- 마음전할 곳 start  -->
-      <div class="middle-title">축하의 마음 전하기</div>
-      <div style="font-size: 0.8rem; color: #5a5f66; text-align: center; line-height: 1rem">축하의 마음을 담아 축의금을 전달해 보세요.<br/>복사 버튼을 클릭해 계좌번호를 복사할 수 있습니다.</div>
-      <div class="account" style="margin: 10px auto; border:1px solid #999999; box-shadow: 0 4px 8px rgba(255,228,178, 0.1); border-radius: 10px; width: 85%;">
-        <div class="grooms"></div>
-      </div>
-      <div class="account" style="margin: 10px auto; border:1px solid #999999; box-shadow: 0 4px 8px rgba(255,228,178, 0.1); border-radius: 10px; width: 85%">
-        <div class="brides"></div>
-      </div>
-      <div></div>
-      <!-- 마음전할 곳 end -->
-
-      <footer>&copy; 2024. Harry Choi All Rights Reserved.</footer>
+<body oncontextmenu="return false">
+  <div id="root">
+    <!-- Top start-->
+    <div>
+      <img id="main-img" src="./public/assets/main-division-poto.jpeg" alt="mainImage" height="auto" width="100%" />
     </div>
+    <div style="margin: 60px auto; line-height: 1.2rem">
+      <div class="main-name">
+        <span class="main-name left"></span>
+        <span>|</span>
+        <span class="main-name right"></span>
+      </div>
+      <div class="main-wedding-date"></div>
+      <div class="main-wedding-venu"></div>
+    </div>
+    <!-- Top end-->
 
-    <script src="./src/js/common.js"></script>
-    <script src="./src/js/calendar.js"></script>
-    <script charset="UTF-8">
-      new daum.roughmap.Lander({
-        timestamp: "1724175434169",
-        key: "2keda",
-        mapWidth:
+    <!-- 인사말 start -->
+    <div class="middle-title">인사말</div>
+    <div style="margin: 50px auto">
+      <div style="height: auto; line-height: 2rem; font-weight: 500">
+        사랑하는 이들에게 나란한 이름으로 보내는<br />
+        첫 번째 편지.<br /><br />
+        한곳을 바라보며 첫걸음을 걷는 날<br />
+        늘 곁에서 아껴주셨던 감사한 분들을 모십니다.<br /><br />
+        귀한 걸음으로 오셔서 축하해 주신다면<br />
+        그날의 기쁨과 격려로<br />
+        평생 행복한 그날을 간직하며 살겠습니다.
+      </div>
+      <div style=" margin: 40px auto; height: auto; line-height: 2rem; font-weight: 500;">
+        귀한걸음으로 축복해주시면<br />
+        더 없는 기쁨으로 간직하겠습니다.<br />
+      </div>
+    </div>
+    <div style="line-height: 2rem; margin: 10px auto">
+      <span style="letter-spacing: 2px">최명규</span> |
+      <span style="letter-spacing: 2px">이연순</span>
+      <span style="font-size: 0.8rem; margin: 0 0.3rem">장남</span>
+      <span style="font-weight: 500; letter-spacing: 0.2rem">은호</span>
+      <br />
+      <span style="letter-spacing: 2px">김진광</span> |
+      <span style="letter-spacing: 2px">김영미</span>
+      <span style="font-size: 0.8rem; margin: 0 0.3rem">장녀</span>
+      <span style="font-weight: 500; letter-spacing: 0.2rem">해니</span>
+
+      <div id="call" style="margin: 1rem 0"></div>
+    </div>
+    <!-- 인사말 end -->
+    <!-- 예식일시 start -->
+    <div class="middle-title">예식일시</div>
+    <div id="calendar">
+      <div class="header">
+        <span id="currentMonth"></span>
+      </div>
+      <div class="days">
+        <div class="day" style="color: red">일</div>
+        <div class="day">월</div>
+        <div class="day">화</div>
+        <div class="day">수</div>
+        <div class="day">목</div>
+        <div class="day">금</div>
+        <div class="day">토</div>
+      </div>
+      <div id="dates"></div>
+    </div>
+    <!-- 예식일시 end -->
+
+    <div class="middle-title">사진첩</div>
+    <div class="swiper mySwiper2">
+      <div class="swiper-wrapper"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+    <div thumbsSlider="" class="swiper mySwiper">
+      <div class="swiper-wrapper"></div>
+    </div>
+    <!-- 카카오맵  start -->
+    <div class="middle-title">오시는길</div>
+    <div class="location-info"></div>
+    <div class="location-info-address"></div>
+    <div id="daumRoughmapContainer1724175434169" class="root_daum_roughmap root_daum_roughmap_landing"></div>
+    <!-- 카카오맵 end -->
+    <!-- 주차안내  start -->
+    <!-- <div class="middle-title">주차 안내</div> -->
+    <div class="location-inner">
+      <div>
+        <br />
+        <div class="location-title"><i class="fa-solid fa-train-subway" style="margin-right: 0.2rem"></i> 지하철</div>
+        <div class="location-description">
+          <i class="fa-solid fa-circle"
+            style="font-size: 0.4rem; vertical-align: middle; color: #F4C300; margin-right: 0.3rem"></i>
+          수인분당선 수원시청역 10번출구 (도보 1분거리)
+        </div>
+      </div>
+      <div style="margin : 30px 0">
+        <div class="location-title"><i class="fa-solid fa-bus" style="margin-right: 0.2rem"></i> 버스</div>
+        <div class="location-description">
+          <i class="fa-solid fa-circle"
+            style="font-size: 0.4rem; vertical-align: middle; color: green; margin-right: 0.3rem"></i> 역전정류장 : 13-1,
+          92-1<br>
+          <span style="padding-left: 1rem"><span style="margin-right: 0.2rem">☞</span> 수원시청역 9번 출구, 국민연금공단 하차</span>
+          <br>
+          <i class="fa-solid fa-circle"
+            style="font-size: 0.4rem; vertical-align: middle; color: green; margin-right: 0.3rem"></i> 매산시장앞 : 51<br>
+          <span style="padding-left: 1rem"><span style="margin-right: 0.2rem">☞</span> 수원시청역 1번 출구, 국민연금공단, 경인일보
+            하차</span> <br>
+          <i class="fa-solid fa-circle"
+            style="font-size: 0.4rem; vertical-align: middle; color: green; margin-right: 0.3rem"></i>아주대,법원사거리 : 81<br>
+          <span style="padding-left: 1rem"><span style="margin-right: 0.2rem">☞</span> 수원시청역 10번 출구, 국민연금공단, 경인일보
+            하차</span>
+        </div>
+      </div>
+      <div style="margin : 30px 0">
+        <div class="location-title"><i class="fa-solid fa-square-parking" style="margin-right: 0.3rem"></i> 주차안내</div>
+        <div class="location-description">
+          <i class="fa-solid fa-circle"
+            style="font-size: 0.4rem; vertical-align: middle; color: #6042F9; margin-right: 0.3rem"></i> 웨딩홀 입구에서 주차요원
+          안내를 받으시길 바랍니다.<br>
+          <span style="padding-left: 1rem">(경인일보, 대원콤비프라자, 경기아트센터)</span>
+        </div>
+      </div>
+      <div>
+        <div class="location-title"><i class="fa-solid fa-van-shuttle" style="margin-right: 0.3rem"></i> 버스대절안내</div>
+        <div class="location-description">
+          <i class="fa-solid fa-circle"
+            style="font-size: 0.4rem; vertical-align: middle; color: #b7b7b7; margin-right: 0.3rem"></i> <span>1호차 (진동
+            농협 -> 마산역 -> 파티움하우스)</span><br>
+          <span style="padding-left: 1rem"><span style="margin-right: 0.2rem">-</span> 진동 농협(마산 삼진고교 맞은편) / 6:30
+            am</span><br />
+          <span style="padding-left: 1rem"><span style="margin-right: 0.2rem">-</span> 마산역(정일면옥 건물 1층 투썸 앞) / 7:00
+            am</span>
+        </div>
+        <br />
+        <div class="location-description">
+          <i class="fa-solid fa-circle"
+            style="font-size: 0.4rem; vertical-align: middle; color: #b7b7b7; margin-right: 0.3rem"></i> <span>2호차 (마산
+            댓거리 -> 마산역 -> 파티움하우스)</span><br>
+          <span style="padding-left: 1rem"><span style="margin-right: 0.2rem">-</span> 마산 댓거리(마산 우리요양병원 맞은편) / 6:30
+            am</span><br />
+          <span style="padding-left: 1rem"><span style="margin-right: 0.2rem">-</span> 마산역(정일면옥 건물 1층 투썸 앞) / 7:00
+            am</span>
+        </div>
+      </div>
+    </div>
+    <!-- 주차안내 end -->
+
+    <!-- 마음전할 곳 start  -->
+    <div class="middle-title">축하의 마음 전하기</div>
+    <div style="font-size: 0.8rem; color: #5a5f66; text-align: center; line-height: 1rem">축하의 마음을 담아 축의금을 전달해
+      보세요.<br />복사 버튼을 클릭해 계좌번호를 복사할 수 있습니다.</div>
+    <div class="account"
+      style="margin: 10px auto; border:1px solid #999999; box-shadow: 0 4px 8px rgba(255,228,178, 0.1); border-radius: 10px; width: 85%;">
+      <div class="grooms"></div>
+    </div>
+    <div class="account"
+      style="margin: 10px auto; border:1px solid #999999; box-shadow: 0 4px 8px rgba(255,228,178, 0.1); border-radius: 10px; width: 85%">
+      <div class="brides"></div>
+    </div>
+    <div></div>
+    <!-- 마음전할 곳 end -->
+
+    <footer>&copy; 2024-2025. Harry Choi All Rights Reserved.</footer>
+  </div>
+
+  <script src="./src/js/common.js"></script>
+  <script src="./src/js/calendar.js"></script>
+  <script charset="UTF-8">
+    new daum.roughmap.Lander({
+      timestamp: "1724175434169",
+      key: "2keda",
+      mapWidth:
         mobileOs.myMobileOs === "etc" ? bodyWidth : `${bodyWidth - 60}`,
-        mapHeight: "360",
-      }).render();
-    </script>
+      mapHeight: "360",
+    }).render();
+  </script>
 
 
-    <!-- Initialize Swiper -->
-    <script>
-      // var swiper = new Swiper(".mySwiper", {
-      //   navigation: {
-      //     nextEl: ".swiper-button-next",
-      //     prevEl: ".swiper-button-prev",
-      //   },
-      // });
-      var swiper = new Swiper(".mySwiper", {
-        loop: true,
-        spaceBetween: 10,
-        slidesPerView: 4,
-        freeMode: true,
-        watchSlidesProgress: true,
-      });
-      var swiper2 = new Swiper(".mySwiper2", {
-        loop: true,
-        spaceBetween: 10,
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-        thumbs: {
-          swiper: swiper,
-        },
-      });
-      // 확대 방어 코드
-      document.body.addEventListener('touchstart', function(e) {
-        if ( (e.touches.length > 1) || e.targetTouches.length > 1) {
-          e.preventDefault();
-          e.stopPropagation();
-          e.stopImmediatePropagation();
-        }
-      }, {passive: false});
-    </script>
-  </body>
+  <!-- Initialize Swiper -->
+  <script>
+    // var swiper = new Swiper(".mySwiper", {
+    //   navigation: {
+    //     nextEl: ".swiper-button-next",
+    //     prevEl: ".swiper-button-prev",
+    //   },
+    // });
+    var swiper = new Swiper(".mySwiper", {
+      loop: true,
+      spaceBetween: 10,
+      slidesPerView: 4,
+      freeMode: true,
+      watchSlidesProgress: true,
+    });
+    var swiper2 = new Swiper(".mySwiper2", {
+      loop: true,
+      spaceBetween: 10,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      thumbs: {
+        swiper: swiper,
+      },
+    });
+    // 확대 방어 코드
+    document.body.addEventListener('touchstart', function (e) {
+      if ((e.touches.length > 1) || e.targetTouches.length > 1) {
+        e.preventDefault();
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+      }
+    }, { passive: false });
+  </script>
+</body>
+
 </html>
