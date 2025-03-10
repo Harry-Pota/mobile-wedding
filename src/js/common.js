@@ -56,21 +56,21 @@ function clickEvent(e) {
     $(`.${$className}`).slideDown();
 
     if ($className.includes("groom")) {
-      $(`#account-name-id-groom`).css({"border-radius": "10px 10px 0 0"});
+      $(`#account-name-id-groom`).css({ "border-radius": "10px 10px 0 0" });
     }
 
     if ($className.includes("bride")) {
-      $(`#account-name-id-bride`).css({"border-radius": "10px 10px 0 0"});
+      $(`#account-name-id-bride`).css({ "border-radius": "10px 10px 0 0" });
     }
   } else {
     $(`.${$className}`).slideUp();
 
     if ($className.includes("groom")) {
-      $(`#account-name-id-groom`).css({"border-radius": "10px"});
+      $(`#account-name-id-groom`).css({ "border-radius": "10px" });
     }
 
     if ($className.includes("bride")) {
-      $(`#account-name-id-bride`).css({"border-radius": "10px"});
+      $(`#account-name-id-bride`).css({ "border-radius": "10px" });
     }
   }
 }
@@ -81,15 +81,15 @@ var brideAccount = "";
 
 
 const groomsAccountInfos = [
-  {tag: "신랑", name: "최은호", className: "groomAccount", account: "농협 821094-56-013826", phoneNum: "010-9559-3525"},
-  {tag: "신랑 아버지", name: "최명규", className: "groomAccountF", account: "신한은행 110-543-320411", phoneNum: "010-2849-2285"},
-  {tag: "신랑 어머니", name: "이연순", className: "groomAccountM", account: "카카오뱅크 3333-19-9692101", phoneNum: "010-4542-2285"}
+  { tag: "신랑", name: "최은호", className: "groomAccount", account: "농협 821094-56-013826", phoneNum: "010-9559-3525" },
+  { tag: "신랑 아버지", name: "최명규", className: "groomAccountF", account: "신한은행 110-543-320411", phoneNum: "010-2849-2285" },
+  { tag: "신랑 어머니", name: "이연순", className: "groomAccountM", account: "카카오뱅크 3333-19-9692101", phoneNum: "010-4542-2285" }
 ];
 
 const brideAccountInfos = [
-  {tag: "신부", name: "김해니", className: "_brideAccount", account: "신한은행 110-476-947623", phoneNum: "010-5174-0677"},
-  {tag: "신부 아버지", name: "김진광", className: "_brideAccountF", account: "국민은행 217-24-0125-056", phoneNum: "010-5087-0678"},
-  {tag: "신부 어머니", name: "김영미", className: "_brideAccountM", account: "국민은행 217-21-0458-402", phoneNum: "010-5063-0674"}
+  { tag: "신부", name: "김해니", className: "_brideAccount", account: "신한은행 110-476-947623", phoneNum: "010-5174-0677" },
+  { tag: "신부 아버지", name: "김진광", className: "_brideAccountF", account: "국민은행 217-24-0125-056", phoneNum: "010-5087-0678" },
+  { tag: "신부 어머니", name: "김영미", className: "_brideAccountM", account: "국민은행 217-21-0458-402", phoneNum: "010-5063-0674" }
 ];
 
 groomsAccount += `<div class="account-name" id="account-name-id-groom" onclick="clickEvent(this)">신랑측 마음 전하기</div>`
@@ -113,7 +113,7 @@ groomsAccountInfos.forEach((rendor, i) => {
 });
 
 brideAccountInfos.forEach((rendor, i) => (
-    brideAccount += `
+  brideAccount += `
    <div class="brideFamilyInfo" style="display: none; height: auto;">
      <!-- 계좌번호 -->
     <div style="display: flex; justify-content: start; align-items: center; padding: 0.5rem 0.5rem 0.5rem 1rem" >
@@ -154,10 +154,11 @@ function onCall() {
 
 // 계좌번호 복사 Function
 function copyAccount(e) {
-  const $account = e.innerText;
-
+  const findAccount = e.parentNode.parentNode.innerText;
+  const account = findAccount.split("\n")[0];
   const textArea = document.createElement("textarea");
-  textArea.value = $account;
+
+  textArea.value = account;
   document.body.appendChild(textArea);
   textArea.focus();
   textArea.select();
